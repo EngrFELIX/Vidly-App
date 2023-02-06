@@ -30,7 +30,7 @@ const genres = [
     {
         id: 5,
         name: 'Historical',
-        description: 'These films can be based on real events in the past or sometimes just the time period is used as the setting and all events are fictitious. In both cases, the narrative takes place inside an accurate depiction of a historical setting. Sometimes these are biographical movies, also known as Biopics. Examples of historical movies: Braveheart, Amadeus, Dunkirk',
+        description: 'These films can be based on real events in the past or sometimes just the time period is used as the setting and all events are fictitious. In both cases, the narrative takes place inside an accurate depiction of a historical setting. Sometimes these are biographical movies, also known as Biopics. Examples of historical movies: Brave Heart, Amadeus, Dunkirk',
         availableMovies: 20
     },
 
