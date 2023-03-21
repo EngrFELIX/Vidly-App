@@ -1,4 +1,9 @@
 const Joi = require('joi');
+const mongoose = require('mongoose')
+
+const Schema = new mongoose.Schema({
+    name: String
+  });
 
 function validatedGenre(data) {
     const schema = Joi.object({
@@ -16,5 +21,12 @@ function optionalValidatedGenre(data) {
     return schema.validate(data)
 }
 
+function paginationSchema(input) {
+    const result = Joi.object({
+        page: Joi.number().integer().min(1).default(1),
+        limit: Joi.number().integer().min(1).default(3),
+    })
+    return result.validate(input)// returning a validated value
+}
 
-module.exports = {validatedGenre, optionalValidatedGenre}
+module.exports = {validatedGenre, optionalValidatedGenre, paginationSchema}

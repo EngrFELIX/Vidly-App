@@ -2,6 +2,15 @@ const express = require('express')
 const morgan = require('morgan');
 require('dotenv').config({path: './.env'})
 const {movies,genres} = require('./routes')
+const mongoose = require('mongoose');
+
+main().catch(err => console.log(err));
+
+async function main() {
+  await mongoose.connect('mongodb://127.0.0.1:27017/test');
+
+  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
+}
 
 const port = process.env.PORT || 3000
 const app = express();

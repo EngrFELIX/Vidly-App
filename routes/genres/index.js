@@ -82,7 +82,9 @@ router.patch('/:genreId/', (req, res) => {
 router.delete('/:genreId', (req, res) => {
     const genreIndex = getIndexById(genres, req.params.genreId) //finding the index of the genre with the id
 
-    if (genreError(genreIndex, res)) {return}
+        if (!genreError(genreIndex, res)) {
+            return res.status(404).send('genre not found')
+        }
 
     genres.splice(genreIndex, 1)
     res.status(200).end('delete successful')
